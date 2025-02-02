@@ -1,11 +1,9 @@
-#codigo principal
-
-import PyPDF2
+import pypdf
 import ollama
 
 def pdf_to_text(file_path):
     with open(file_path, 'rb') as file:
-        reader = PyPDF2.PdfReader(file)
+        reader = pypdf.PdfReader(file)
         text = ''
 
         for page in reader.pages:
@@ -13,6 +11,7 @@ def pdf_to_text(file_path):
 
         return text
 
-file_path = 'documento.pdf'
+file_path = 'Curriculo-1.pdf'
 
 texto = pdf_to_text(file_path)
+print(texto)
